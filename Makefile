@@ -29,6 +29,12 @@ reset-cluster:
 	kind load docker-image $(FULL_IMAGE_NAME)-macos:$(IMAGE_VERSION)
 	kubectl cluster-info --context kind-kind
 
+.PHONY: install-extensions
+install-extensions:
+	helm upgrade --install ingress-nginx ingress-nginx \
+	  --repo https://kubernetes.github.io/ingress-nginx \
+	  --namespace ingress-nginx --create-namespace
+
 .PHONY: helm-update
 helm-update:
 	#### Update the helm chart
