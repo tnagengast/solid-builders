@@ -1,0 +1,6 @@
+node_modules
+dist
+*.tgz
+.env
+values*.yaml
+!values.example.yaml

@@ -1,0 +1,24 @@
+namespace: solid-builders
+image: tomnagengast/solid-builders-linux:latest
+replicaCount: 1
+pullPolicy: Always
+registry:
+  secretName: localhost
+ingress:
+  host: ~
+seats: 42
+
+# Local Dev
+
+replicated:
+  integration:
+    licenseID: <licenseID>>
+    mockData: |
+        helmChartURL: oci://registry.replicated.com/dev-app/dev-channel/dev-parent-chart
+        currentRelease:
+          versionLabel: 0.1.7
+          releaseNotes: "test"
+          createdAt: "2012-09-09"
+          helmReleaseName: dev-parent-chart
+          helmReleaseRevision: 2
+          helmReleaseNamespace: default

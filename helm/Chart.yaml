@@ -1,0 +1,11 @@
+apiVersion: v2
+name: solid-builders
+description: A Solid application in Kubernetes
+type: application
+icon: https://shorturl.at/lwHOP
+version: 3.24.0
+
+dependencies:
+- name: replicated
+  repository: oci://registry.replicated.com/library
+  version: 0.0.1-alpha.19
